@@ -11,9 +11,9 @@ class Archive:
 	def compress(self):
 		call(["tar", "czf", self.directory + '.tar.gz', self.directory])
 
-def main():
-	archive = Archive("fakedirectory")
+def main(directory):
+	archive = Archive(directory)
 	archive.compress()
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1])
